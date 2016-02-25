@@ -1,0 +1,38 @@
+# Add the following to .bashrc
+# if [ -f ~/linux-env/_bashrc ]; then
+#     . ~/linux-env/_bashrc
+# fi
+
+# Aliases
+alias la='ls -A'
+alias ll='ls -l'
+alias lla='ls -lA'
+alias gs='git status'
+alias le='less'
+alias u='cd ..'
+
+# Prompt
+function proml {
+local BLUE="\[\033[0;34m\]"
+local RED="\[\033[0;31m\]"
+local LIGHT_RED="\[\033[1;31m\]"
+local WHITE="\[\033[1;37m\]"
+local NO_COLOUR="\[\033[0m\]"
+case $TERM in
+    xterm*|rxvt*)
+        TITLEBAR='\[\033]0;\u@\h:\w\007\]'
+        ;;
+    *)
+        TITLEBAR=""
+        ;;
+esac
+
+PS1="${TITLEBAR}\
+$BLUE[$LIGHT_RED\$(date +%T)$BLUE]\
+$BLUE[$LIGHT_RED\h:\W$BLUE]\
+$BLUE\$$NO_COLOUR "
+PS2='> '
+PS4='+ '
+}
+
+proml
