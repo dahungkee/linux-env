@@ -3,16 +3,14 @@
 #     . ~/linux-env/_bashrc
 # fi
 
+export HISTCONTROL=ignoredups
+
 # Aliases
 alias u='cd ..'
-alias gb='git branch'
-alias gl='git log'
-alias gs='git status'
 alias le='less'
 alias la='ls -A'
 alias ll='ls -l'
 alias lla='ls -lA'
-alias o='xdg-open'
 
 # Prompt
 function proml {
